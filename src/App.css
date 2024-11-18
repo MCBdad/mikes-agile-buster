@@ -1,38 +1,124 @@
+/* App.css */
+
+/* Background and overall layout */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  background-color: #d3d3d3; /* Light gray background for the page */
+}
+
+/* Poker Table Styling */
+.poker-table {
+  width: 90%;
+  max-width: 800px;
+  background-color: #4a7b3b; /* Classic poker table green */
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
   color: white;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Card selection */
+.card-selection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card-button {
+  width: 60px;
+  height: 90px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-button:hover {
+  background-color: #ffeb3b; /* Highlight on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-button.selected {
+  background-color: #ffeb3b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons at the bottom */
+.controls {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.vote-button, .results-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.vote-button:hover, .results-button:hover {
+  background-color: #e64a19; /* Darker on hover */
+}
+
+/* Results and Average vote section */
+.average-vote {
+  margin-top: 20px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.average-vote h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.vote-button, .results-button {
+  margin-top: 20px;
+}
+
+/* Specific styling for vote result cards (Poker chips) */
+.vote-result-card {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-button {
+  background-image: url('2-card.png');
+  background-size: cover;
+  background-position: center
 }
