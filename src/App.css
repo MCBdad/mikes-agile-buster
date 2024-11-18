@@ -1,124 +1,98 @@
 /* App.css */
 
-/* Background and overall layout */
-.App {
+/* Set the overall table background */
+body {
+  background-color: #1c6e00;  /* Green felt-like background */
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #d3d3d3; /* Light gray background for the page */
+  flex-direction: column;
 }
 
-/* Poker Table Styling */
+/* Overall container for the poker table */
 .poker-table {
-  width: 90%;
-  max-width: 800px;
-  background-color: #4a7b3b; /* Classic poker table green */
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 1000px;
+  background-color: #2c6b2f; /* Darker shade for the table */
+  padding: 40px;
+  border-radius: 10px;
+  border: 3px solid #4b9c2f; /* Add a border to the table */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
+/* Poker Title Styling */
 .title {
-  color: white;
   font-size: 36px;
-  margin-bottom: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 40px;
 }
 
-/* Card selection */
+/* Card selection area */
 .card-selection {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  gap: 20px;  /* Add gap between cards */
 }
 
+/* Style each card button to resemble a playing card */
 .card-button {
-  width: 60px;
-  height: 90px;
-  margin: 5px;
-  border-radius: 8px;
-  border: 2px solid #333;
+  width: 120px;        /* Set card width */
+  height: 180px;       /* Set card height */
+  margin: 10px;
+  border-radius: 10px; /* Rounded corners for playing cards */
+  border: 2px solid #333;  /* Black border for the card */
   background-color: white;
-  font-size: 20px;
+  font-size: 24px;      /* Increase font size for better readability */
   font-weight: bold;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.card-button:hover {
-  background-color: #ffeb3b; /* Highlight on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.card-button.selected {
-  background-color: #ffeb3b;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Buttons at the bottom */
-.controls {
-  margin-top: 30px;
+  text-align: center;
   display: flex;
   justify-content: center;
-  gap: 20px;
-}
-
-.vote-button, .results-button {
-  padding: 12px 20px;
-  font-size: 18px;
-  background-color: #ff5722;
-  color: white;
-  border: none;
-  border-radius: 8px;
+  align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for 3D effect */
+  font-family: 'Times New Roman', serif; /* Font resembling playing cards */
 }
 
-.vote-button:hover, .results-button:hover {
-  background-color: #e64a19; /* Darker on hover */
+/* Hover effect for cards */
+.card-button:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
 }
 
-/* Results and Average vote section */
+/* Highlight selected card */
+.card-button.selected {
+  background-color: #ffeb3b; /* Yellow background for selected card */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Keep shadow effect for selected */
+}
+
+/* Optional: Add a border for the selected card */
+.card-button.selected {
+  border: 2px solid #ff9800;  /* Orange border for the selected card */
+}
+
+/* Average vote section */
 .average-vote {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-  background-color: white;
-  padding: 15px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: #333;
 }
 
 .average-vote h3 {
-  margin: 0;
+  color: #333;
+}
+
+.average-vote p {
   font-size: 24px;
-}
-
-.vote-button, .results-button {
-  margin-top: 20px;
-}
-
-/* Specific styling for vote result cards (Poker chips) */
-.vote-result-card {
-  background-color: #f0f0f0;
-  padding: 15px;
-  margin: 5px;
-  border-radius: 8px;
-  font-size: 22px;
-  font-weight: bold;
-  display: inline-block;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.card-button {
-  background-image: url('2-card.png');
-  background-size: cover;
-  background-position: center
+  color: #333;
 }

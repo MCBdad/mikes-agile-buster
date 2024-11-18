@@ -48,14 +48,14 @@ function App() {
   return (
     <div className="App">
       <div className="poker-table">
-        <h1 className="title">Planning Poker</h1>
+        <h1 className="title">Mike's High Stakes Planning Poker Extravaganza!!!!</h1>
         <div className="card-selection">
           <h2>Choose a card:</h2>
           <CardDeck cards={cards} onSelectCard={handleCardSelect} selectedCard={selectedCard} />
         </div>
         <div className="controls">
-          <button onClick={handleSubmitVote} className="vote-button">Submit Vote</button>
-          <button onClick={handleShowResults} className="results-button">Show Results</button>
+          <button onClick={handleSubmitVote} className="vote-button">VOTE</button>
+          <button onClick={handleShowResults} className="results-button">FLIP 'EM</button>
         </div>
         
         {/* Results section */}

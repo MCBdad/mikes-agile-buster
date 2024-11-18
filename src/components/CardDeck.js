@@ -1,12 +1,13 @@
+// CardDeck.js
 import React from 'react';
 
-function CardDeck({ cards, onSelectCard, selectedCard }) {
+const CardDeck = ({ cards, onSelectCard, selectedCard }) => {
   return (
-    <div className="card-deck">
-      {cards.map((card) => (
+    <div className="card-selection">
+      {cards.map((card, index) => (
         <button
-          key={card}
-          className={`card ${selectedCard === card ? 'selected' : ''}`}
+          key={index}
+          className={`card-button ${selectedCard === card ? 'selected' : ''}`}
           onClick={() => onSelectCard(card)}
         >
           {card}
@@ -14,6 +15,6 @@ function CardDeck({ cards, onSelectCard, selectedCard }) {
       ))}
     </div>
   );
-}
+};
 
 export default CardDeck;

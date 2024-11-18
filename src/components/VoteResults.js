@@ -2,7 +2,7 @@ import React from 'react';
 
 function VoteResults({ votes }) {
   if (votes.length === 0) {
-    return <p>No votes yet!</p>;
+    return <p>C'Mon Man!!!!  Get to Voting!!</p>;
   }
 
   const voteCount = votes.reduce((acc, vote) => {
