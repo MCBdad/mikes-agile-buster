@@ -27,9 +27,10 @@ body {
 
 /* Poker Title Styling */
 .title {
+  font-family: cursive;
   font-size: 36px;
   font-weight: bold;
-  color: white;
+  color: black;
   margin-bottom: 40px;
 }
 
@@ -95,4 +96,16 @@ body {
 .average-vote p {
   font-size: 24px;
   color: #333;
+}
+
+.vote-button{
+  background-color: #ffeb3b;
+  width: 120px;        /* Set card width */
+  height: 100px;
+}
+
+.results-button{
+  background-color: #ffeb3b;
+  width: 120px;        /* Set card width */
+  height: 100px;
 }
