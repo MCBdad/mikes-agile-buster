@@ -1,4 +1,3 @@
-// backend/server.js
 const express = require('express');
 const cors = require('cors');
 
@@ -6,10 +5,10 @@ const app = express();
 const port = 5000;
 
 // Middleware
-app.use(cors()); // Allow requests from different origins (React frontend)
-app.use(express.json()); // Parse incoming JSON requests
+app.use(cors());
+app.use(express.json());
 
-// Simple in-memory vote storage (for demo purposes)
+// In-memory vote storage
 let votes = [];
 
 // Route to get votes
@@ -37,6 +36,12 @@ app.get('/api/average', (req, res) => {
   const sum = validVotes.reduce((acc, vote) => acc + vote, 0);
   const average = (sum / validVotes.length).toFixed(2);
   res.json({ average });
+});
+
+// Route to reset all votes
+app.post('/api/reset', (req, res) => {
+  votes = []; // Reset votes array
+  res.status(200).json({ message: 'Votes have been reset' });
 });
 
 // Start server

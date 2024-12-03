@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function App() {
   const [selectedCard, setSelectedCard] = useState(null);
-  const [votes, setVotes] = useState([]);
+  const [votes, setVotes] = useState([]); // State to store votes
   const [averageVote, setAverageVote] = useState(null);
   const [showResults, setShowResults] = useState(false);
 
@@ -32,6 +32,19 @@ function App() {
     setShowResults(true);
   };
 
+  const handleResetVotes = async () => {
+    try {
+      // Clear votes on the backend (optional)
+      await axios.post('http://localhost:5000/api/reset'); // You will need to implement this route in your backend
+      // Reset votes on the frontend
+      setVotes([]);
+      setAverageVote(null); // Reset the average vote
+      setShowResults(false); // Hide the results
+    } catch (error) {
+      console.error('Error resetting votes:', error);
+    }
+  };
+
   // Fetch the average vote when showResults is clicked
   useEffect(() => {
     if (showResults) {
@@ -48,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <div className="poker-table">
-        <h1 className="title">Mike's High Stakes Planning Poker Extravaganza!!!!</h1>
+        <h1 className="title">Mike's Planning Poker!!!!</h1>
         <div className="card-selection">
           <h2>Choose a card:</h2>
           <CardDeck cards={cards} onSelectCard={handleCardSelect} selectedCard={selectedCard} />
@@ -65,6 +78,11 @@ function App() {
         <div className="average-vote">
           <h3>Average Vote:</h3>
           <p>{averageVote ?? 'No votes yet'}</p>
+        </div>
+
+        {/* Reset votes button */}
+        <div className="controls">
+          <button onClick={handleResetVotes} className="reset-button">RESET VOTES</button>
         </div>
       </div>
     </div>
