@@ -29,6 +29,7 @@ function App() {
   };
 
   const handleShowResults = () => {
+    console.log('Setting showResults to true');
     setShowResults(true);
   };
 
